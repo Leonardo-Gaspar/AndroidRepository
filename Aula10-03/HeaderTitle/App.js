@@ -12,9 +12,9 @@ const Stack = createStackNavigator();
 //Aqui estou utilizando o componente View para estruturar a tela
 function HomeScreen() {
   return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-        <Text>Meu Aplicativo</Text>
-      </View>
+    <View style={styles.container}>
+      <Text style={styles.texto}>Meu Aplicativo</Text>
+    </View>
   );
 }
 
@@ -26,7 +26,24 @@ function App() {
         <Stack.Screen name="TituloHome" component={HomeScreen} />
       </Stack.Navigator>
     </NavigationContainer>
-    );
+  );
 }
-export default App; //Exportamos o componente App para que ele possa ser utilizado em outros ar
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: 'black',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  texto: {
+    color: 'blue', 
+    fontSize: 20,  
+    fontWeight: 'bold',
+    alignItems: 'center'
+  },
+});
+
+export default App;
+
 
